@@ -12,7 +12,10 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bytatech.ayoos.client.dms_core.api.PeopleApi;
 import com.bytatech.ayoos.client.dms_core.api.SitesApi;
+import com.bytatech.ayoos.client.dms_core.model.PersonBodyCreate;
+import com.bytatech.ayoos.client.dms_core.model.PersonEntry;
 import com.bytatech.ayoos.client.dms_core.model.SiteBodyCreate;
 import com.bytatech.ayoos.client.dms_core.model.SiteBodyCreate.VisibilityEnum;
 import com.bytatech.ayoos.client.dms_core.model.SiteEntry;
@@ -25,7 +28,8 @@ public class CommandResource {
 	
 	@Autowired
 	SitesApi siteApi;
-	
+	@Autowired
+	PeopleApi peopleApi;
 	@GetMapping("/")
 	public String test() {
 		return "success";
@@ -39,7 +43,19 @@ public class CommandResource {
 		ResponseEntity<SiteEntry> entry = siteApi.createSite(siteBodyCreate, false, false, new ArrayList());
 		return entry.getBody().getEntry().getId();
 	}
-	
+	@PostMapping("/testpeople/{id}")
+		public void createPersonOnDMS(@PathVariable String id) {
+			//log.debug("=================into the process createPeople()===========");
+	System.out.println("#################################");
+			PersonBodyCreate personBodyCreate = new PersonBodyCreate();
+			personBodyCreate.setId(id);
+			personBodyCreate.setFirstName(id);
+			personBodyCreate.setEmail(id+"@gmail.com");
+			personBodyCreate.setPassword(id);
+			personBodyCreate.setEnabled(true);
+			ResponseEntity<PersonEntry> p=peopleApi.createPerson(personBodyCreate, null);
+			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"+p.getBody());
+		}
 	
 	
 }
