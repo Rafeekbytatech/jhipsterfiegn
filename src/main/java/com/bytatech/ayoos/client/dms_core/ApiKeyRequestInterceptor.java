@@ -1,6 +1,7 @@
 package com.bytatech.ayoos.client.dms_core;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpHeaders;
 import org.springframework.util.Base64Utils;
 
 import feign.RequestInterceptor;
@@ -29,9 +30,14 @@ public class ApiKeyRequestInterceptor implements RequestInterceptor {
   public void apply(RequestTemplate requestTemplate) {
     if(location.equals("header")) {
       requestTemplate.header(name, value);
+    
     } else if(location.equals("query")) {
       requestTemplate.query(name, value);
     }
+    
+    
+    
+    
   
 	  
 	  
