@@ -39,7 +39,7 @@ public class DmsResource {
 		public String createNodes(/*@PathVariable String nodeId,@RequestBody NodeBodyCreate nodeBodyCreateString name,String dmsId*/ ) {
 				  System.out.println("+++++++++++++success++++++++++");
 				  NodeBodyCreate nodeBodyCreate = new NodeBodyCreate();
-					nodeBodyCreate.setName("cuucummmmm");
+					nodeBodyCreate.setName("dummmm");
 					nodeBodyCreate.setNodeType("cm:content");
 					//nodeBodyCreate.setRelativePath("Sites/"+dmsId);
 

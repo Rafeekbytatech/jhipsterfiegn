@@ -9,7 +9,7 @@ import feign.RequestInterceptor;
 import feign.RequestTemplate;
 import feign.Util;
 
-//@Configuration
+
 public class ApiKeyRequestInterceptor implements RequestInterceptor {
  
 	@Bean
@@ -31,12 +31,12 @@ public class ApiKeyRequestInterceptor implements RequestInterceptor {
 
   @Override
   public void apply(RequestTemplate requestTemplate) {
-   /* if(location.equals("header")) {
+  /* if(location.equals("header")) {
       requestTemplate.header(name, value);
     } else if(location.equals("query")) {
       requestTemplate.query(name, value);
     }*/
-		 requestTemplate.header("Authorization", "BasicVElDS0VUXzE4ODBmN2RmODdjMTNmOWJiNDJiMWMxOTZhZWI0MmM1NmM2NWUzMTM=");
+		 requestTemplate.header("Authorization", "Basic cmFmZWVxMDg4QGdtYWlsLmNvbTo2Z2xnd3V1dWRk");
 			
   }
 
