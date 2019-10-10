@@ -16,9 +16,12 @@ import com.bytatech.ayoos.client.custom_dms_core.ApiKeyRequestInterceptor;
 import com.bytatech.ayoos.client.custom_dms_core.api.NodesApi;
 import com.bytatech.ayoos.client.custom_dms_core.model.NodeBodyCreate;
 
+//import de.codeboje.tutorials.feignfraport.SitePaging;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-
+import com.bytatech.ayoos.client.dms_core.api.FlightClient;
+import com.bytatech.ayoos.client.dms_core.model.SitePaging;
 @RestController
 @RequestMapping("/api/dms")
 public class DmsResource {
@@ -26,6 +29,9 @@ public class DmsResource {
 	
 	/*@Autowired
 	ApiKeyRequestInterceptor apiKeyRequestInterceptor;*/
+	
+	FlightClient flightClient;
+	
 	@Autowired
 	NodesApi nodesApi;
 	
@@ -50,6 +56,10 @@ public class DmsResource {
 				  
 				  }
 	
-
+	@GetMapping("/sites")
+	public  ResponseEntity<SitePaging> test2() {
+		return flightClient.listSites();
+		}
+	
 	
 }
