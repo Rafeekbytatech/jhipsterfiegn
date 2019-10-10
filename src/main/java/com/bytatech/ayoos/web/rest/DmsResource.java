@@ -21,7 +21,10 @@ import com.bytatech.ayoos.client.custom_dms_core.model.NodeBodyCreate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import com.bytatech.ayoos.client.custom_dms_core.api.FlightClient;
-import com.bytatech.ayoos.client.dms_core.model.SitePaging;
+import com.bytatech.ayoos.client.custom_dms_core.model.SiteBodyCreate;
+import com.bytatech.ayoos.client.custom_dms_core.model.SiteEntry;
+import com.bytatech.ayoos.client.custom_dms_core.model.SitePaging;
+import com.bytatech.ayoos.client.custom_dms_core.model.SiteBodyCreate.VisibilityEnum;
 @RestController
 @RequestMapping("/api/dms")
 public class DmsResource {
@@ -64,6 +67,19 @@ public class DmsResource {
 	public  void test3() {
 		System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"+flightClient.listPeople().getBody());
 	}
+	
+	@PostMapping("/site/{siteId}")
+	public String createSite(@PathVariable String siteId) {
+		SiteBodyCreate siteBodyCreate = new SiteBodyCreate();
+		siteBodyCreate.setTitle(siteId);
+		siteBodyCreate.setId(siteId);
+		siteBodyCreate.setVisibility(VisibilityEnum.MODERATED);
+		flightClient.createSite(siteBodyCreate);
+		ResponseEntity<SiteEntry> entry = flightClient.createSite(siteBodyCreate);
+		return entry.getBody().getEntry().getId();
+	}
+	
+	
 		}
 	
 

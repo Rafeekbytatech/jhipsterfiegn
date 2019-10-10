@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.bytatech.ayoos.client.custom_dms_core.model.PersonPaging;
+import com.bytatech.ayoos.client.custom_dms_core.model.SiteBodyCreate;
+import com.bytatech.ayoos.client.custom_dms_core.model.SiteEntry;
 import com.bytatech.ayoos.client.custom_dms_core.model.SitePaging;
 
 import io.swagger.annotations.ApiParam;
@@ -37,5 +39,17 @@ public interface FlightClient {
             produces = "application/json", 
             method = RequestMethod.GET)
     ResponseEntity<PersonPaging> listPeople();
+    
+    
+    @RequestMapping(value = "/sites",
+            produces = "application/json", 
+            consumes = "application/json",
+            method = RequestMethod.POST)
+	 ResponseEntity<SiteEntry> createSite(SiteBodyCreate siteBodyCreate);
+    
+    
+    
+    
+    
 
 }
