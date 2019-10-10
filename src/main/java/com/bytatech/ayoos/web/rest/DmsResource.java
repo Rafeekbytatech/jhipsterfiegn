@@ -60,6 +60,10 @@ public class DmsResource {
 	public  void test2() {
 		System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"+flightClient.listSites().getBody());
 		}
+	@GetMapping("/people")
+	public  void test3() {
+		System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"+flightClient.listPeople().getBody());
+	}
+		}
 	
-	
-}
+
