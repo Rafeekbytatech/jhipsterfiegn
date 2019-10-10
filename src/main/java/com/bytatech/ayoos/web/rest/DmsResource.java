@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bytatech.ayoos.client.custom_dms_core.ApiKeyRequestInterceptor;
+//import com.bytatech.ayoos.client.custom_dms_core.ApiKeyRequestInterceptor;
 import com.bytatech.ayoos.client.custom_dms_core.api.NodesApi;
 import com.bytatech.ayoos.client.custom_dms_core.model.NodeBodyCreate;
 
@@ -65,7 +65,7 @@ public class DmsResource {
 		}
 	@GetMapping("/people")
 	public  void test3() {
-		System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"+flightClient.listPeople().getBody());
+		System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"+flightClient.listPeople("Basic cmFmZWVxMDg4QGdtYWlsLmNvbTo2Z2xnd3V1dWRk").getBody());
 	}
 	
 	@PostMapping("/site/{siteId}")
