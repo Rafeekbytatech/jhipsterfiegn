@@ -74,8 +74,8 @@ public class DmsResource {
 		siteBodyCreate.setTitle(siteId);
 		siteBodyCreate.setId(siteId);
 		siteBodyCreate.setVisibility(VisibilityEnum.MODERATED);
-		flightClient.createSite(siteBodyCreate);
-		ResponseEntity<SiteEntry> entry = flightClient.createSite(siteBodyCreate);
+		//flightClient.createSite(siteBodyCreate);
+		ResponseEntity<SiteEntry> entry = flightClient.createSite(siteBodyCreate, false, false, new ArrayList());
 		return entry.getBody().getEntry().getId();
 	}
 	
