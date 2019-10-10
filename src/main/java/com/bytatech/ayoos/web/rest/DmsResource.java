@@ -20,7 +20,7 @@ import com.bytatech.ayoos.client.custom_dms_core.model.NodeBodyCreate;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import com.bytatech.ayoos.client.dms_core.api.FlightClient;
+import com.bytatech.ayoos.client.custom_dms_core.api.FlightClient;
 import com.bytatech.ayoos.client.dms_core.model.SitePaging;
 @RestController
 @RequestMapping("/api/dms")
@@ -57,8 +57,8 @@ public class DmsResource {
 				  }
 	
 	@GetMapping("/sites")
-	public  ResponseEntity<SitePaging> test2() {
-		return flightClient.listSites();
+	public  void test2() {
+		System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"+flightClient.listSites().getBody());
 		}
 	
 	
