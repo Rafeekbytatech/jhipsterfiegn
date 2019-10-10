@@ -32,7 +32,7 @@ public class DmsResource {
 	
 	/*@Autowired
 	ApiKeyRequestInterceptor apiKeyRequestInterceptor;*/
-	
+	@Autowired
 	FlightClient flightClient;
 	
 	@Autowired
