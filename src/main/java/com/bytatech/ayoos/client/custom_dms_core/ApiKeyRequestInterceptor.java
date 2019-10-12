@@ -2,6 +2,7 @@ package com.bytatech.ayoos.client.custom_dms_core;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 //import com.bytatech.ayoos.client.dms_core.ApiKeyRequestInterceptor;
 
@@ -9,13 +10,13 @@ import feign.RequestInterceptor;
 import feign.RequestTemplate;
 import feign.Util;
 
-
+@Component
 public class ApiKeyRequestInterceptor implements RequestInterceptor {
  
-	@Bean
+	/*@Bean
 	ApiKeyRequestInterceptor authFeign() {
 		return new ApiKeyRequestInterceptor();
-	}
+	}*/
 	/*private final String location;
   private final String name;
   private String value;

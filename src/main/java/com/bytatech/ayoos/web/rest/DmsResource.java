@@ -63,16 +63,16 @@ public class DmsResource {
 	public  void test2() {
 		System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"+flightClient.listSites().getBody());
 		}
-	/*@GetMapping("/people")
+	@GetMapping("/people")
 	public  void test3() {
 		System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"+flightClient.listPeople("Basic cmFmZWVxMDg4QGdtYWlsLmNvbTo2Z2xnd3V1dWRk").getBody());
-	}*/
+	}
 	
-	@GetMapping("/people")
+	/*@GetMapping("/people")
 	public  void test3() {
 		System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"+flightClient.listPeople().getBody());
 	}
-	
+	*/
 	
 	
 	@PostMapping("/site/{siteId}")

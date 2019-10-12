@@ -41,13 +41,13 @@ public interface FlightClient {
     
     
     
-   /* @RequestMapping(value = "/people",
+    @RequestMapping(value = "/people",
             produces = "application/json", 
             method = RequestMethod.GET)
    
     ResponseEntity<PersonPaging> listPeople(@RequestHeader("Authorization") String token);
     
-    */
+    
     @RequestMapping(value = "/sites",
             produces = "application/json", 
             consumes = "application/json",
@@ -56,12 +56,12 @@ public interface FlightClient {
 
     
     
-    @RequestMapping(value = "/people",
+   /* @RequestMapping(value = "/people",
             produces = "application/json", 
             method = RequestMethod.GET)
    
     ResponseEntity<PersonPaging> listPeople();
-    
+    */
     
     
     
