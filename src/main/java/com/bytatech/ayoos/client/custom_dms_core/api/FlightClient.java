@@ -38,8 +38,11 @@ public interface FlightClient {
     
     @RequestMapping(method = RequestMethod.GET, value = "/sites", produces = "application/json")
     ResponseEntity<SitePaging> listSites();
+    
+    
+    
     @RequestMapping(value = "/people",
-            produces = "MediaType.APPLICATION_JSON_VALUE", 
+            produces = "application/json", 
             method = RequestMethod.GET)
    
     ResponseEntity<PersonPaging> listPeople(@RequestHeader("Authorization") String token);
