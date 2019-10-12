@@ -1,6 +1,6 @@
 package com.bytatech.ayoos.client.custom_dms_core;
 
-/*import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 //import com.bytatech.ayoos.client.dms_core.ApiKeyRequestInterceptor;
@@ -16,7 +16,7 @@ public class ApiKeyRequestInterceptor implements RequestInterceptor {
 	ApiKeyRequestInterceptor authFeign() {
 		return new ApiKeyRequestInterceptor();
 	}
-	private final String location;
+	/*private final String location;
   private final String name;
   private String value;
 
@@ -27,18 +27,17 @@ public class ApiKeyRequestInterceptor implements RequestInterceptor {
     this.location = location;
     this.name = name;
     this.value = value;
-  }
+  }*/
 
   @Override
   public void apply(RequestTemplate requestTemplate) {
-   if(location.equals("header")) {
+   /*if(location.equals("header")) {
       requestTemplate.header(name, value);
     } else if(location.equals("query")) {
       requestTemplate.query(name, value);
-    }
+    }*/
 		 requestTemplate.header("Authorization", "Basic cmFmZWVxMDg4QGdtYWlsLmNvbTo2Z2xnd3V1dWRk");
 			
   }
 
 }
-*/
