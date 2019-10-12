@@ -19,6 +19,7 @@ import com.bytatech.ayoos.client.custom_dms_core.model.SiteBodyCreate;
 import com.bytatech.ayoos.client.custom_dms_core.model.SiteEntry;
 import com.bytatech.ayoos.client.custom_dms_core.model.SitePaging;
 
+import feign.Headers;
 import io.swagger.annotations.ApiParam;
 
 @FeignClient(name="FlightClient", url= "https://i0rezn.trial.alfresco.com/api/-default-/public/alfresco/versions/1")
@@ -40,6 +41,7 @@ public interface FlightClient {
     @RequestMapping(value = "/people",
             produces = "application/json", 
             method = RequestMethod.GET)
+    @Headers("Content-Type: application/json")
     ResponseEntity<PersonPaging> listPeople(@RequestHeader("Authorization") String token);
     
     
