@@ -22,7 +22,7 @@ import com.bytatech.ayoos.client.custom_dms_core.model.SitePaging;
 import feign.Headers;
 import io.swagger.annotations.ApiParam;
 
-@FeignClient(name="FlightClient", url= "https://i0rezn.trial.alfresco.com/api/-default-/public/alfresco/versions/1")
+@FeignClient(name="FlightClient", url= "https://i0rezn.trial.alfresco.com/alfresco/api/-default-/public/alfresco/versions/1")
 public interface FlightClient {
  /*@RequestMapping(method = RequestMethod.GET, value = "/flight/FRA/departure")
     List<FlightWrapper> getDepartingFlights();
